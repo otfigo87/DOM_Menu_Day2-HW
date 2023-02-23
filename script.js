@@ -87,7 +87,7 @@ topMenuEl.addEventListener("click", (e) => {
   topMenuLinks.forEach((link) => {
     link.classList.remove("active");
   });
-  
+
 //5.5
   e.target.classList.add("active");
 
@@ -126,3 +126,26 @@ topMenuEl.addEventListener("click", (e) => {
 })
 
 //Task6
+
+// 6.0 
+subMenuEl.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (e.target.tagName.toLowerCase() !== 'a')
+        return
+
+    console.log(e.target)
+
+    // 6.1
+    showingSubMenu = false
+    subMenuEl.style.top = 0
+
+    // 6.2
+    topMenuLinks.forEach(link =>
+    {
+        console.log(link)
+        link.classList.remove('active')
+    })
+
+    // 6.3
+    mainEl.innerHTML = `<h1>${e.target.textContent}</h1>`
+})
